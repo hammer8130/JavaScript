@@ -55,7 +55,6 @@ console.log(message)
 
 message = "I'm going"
 console.log(message)
-message = 'I\'m going'
 console.log(message)
 
 // 여러 줄 문자열
@@ -70,5 +69,12 @@ message = `하지만 ES6이상에서는 백틱을 이용하여
 여러 줄 문자열을 만들 수 있습니다.`
 console.log(message)
 
-console.log("-------------------------")
+console.log("-----------------------Template 문자열")
+let temp = 24
+message = "현재 실내 온도는 "+temp+"도입니다."
+console.log(message)
+
+// $(변수명) or $(연산식) -> 실행 결과가 문자열에 포함
+message = `현재 실내 온도는 ${temp}도 입니다.`
+console.log(message )
 
