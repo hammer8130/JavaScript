@@ -23,8 +23,11 @@ console.log(123 === "123") // false -> 값과 타입을 함께 비교
 console.log(Boolean("Javascript"),Boolean("")) //  
 console.log(Boolean(2024),Boolean(0)) // 
 
-console.log(true && "Test") //  Test
+//  Short-circuit
+console.log(true && "Test") //  Test ==> true 일때만 Test를 호출
 console.log(false && "Test") // F && T
 
 console.log(true || "Test") // True
 console.log(false || "Test") // Test
+
+

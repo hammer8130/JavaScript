@@ -8,7 +8,7 @@ for(i=2;i<10;i++){
     }
 }
 
-console.log("-----------while문")
+// console.log("-----------while문")
 
 while(i<10){
     i++
@@ -47,6 +47,24 @@ while(count>0){
     count-- 
 }
 
+// for ... in : 객체의 속성 키를 반복
+const obj = {
+    name:"정우찬",
+    age:"27",
+    job:"취준생"
+}
 
-// TODO : for ... in , for ... of
-//      array extended 수업 이후에 추가 진행
+for (let key in obj){
+    console.log(`${key} -> ${obj[key]}`)
+} // 객체를 배열처럼 접근
+
+// for ... of : 배열을 순회
+const arr = [1,2,3,4,5]
+
+for(let item of arr){
+    console.log(`${item}`)
+}
+
+
+
+

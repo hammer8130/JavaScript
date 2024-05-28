@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script>
+        let name = prompt("이름을 입력해 주세요")
+    </script> -->
+
+    <!-- External Script -->
+    <!-- <script src="script/ask.js"></script> -->
+
+    <script>
+        let newWin // undefined. 선언은 되었으나 할당은 x
+        function openWindow(){
+    // window.open("https://www.naver.com/")
+    // window.open("https://www.naver.com/", "newWin") // URL, 창이름
+    newWin = window.open("https://www.naver.com/", "newWin","width=800, height=600, left=100, top=100") // URL, 창이름,창속성    
+}
+
+function closeWindow(){
+    if(newWin !==undefined && newWin.close) // undefined가 아니고 닫혀있지 않으면
+    newWin.close()
+}
+    </script>
+</head>
+
+<body>
+    <h1>Welcome</h1>
+
+    <h3>window 객체</h3>
+    <ul>
+        <li><a href="javascript:openWindow()">새 창 열기</a></li>
+        
+        <li><a href="javascript:closeWindow()">창 닫기</a></li>
+
+        <li>지금 브라우저의 크기는?</li>
+    </ul>
+    <!-- <script>
+        document.write(`안녕하세요, ${name}님`)
+    </script> -->
+    <!-- <script src="script/print.js"></script> -->
+</body>
+
+</html>
