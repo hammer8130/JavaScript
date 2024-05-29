@@ -91,7 +91,7 @@ function testReduce(){
     },0) // (acc, value, index, arr), 초기값
     console.log("합산결과:",sum)
 }
-// testReduce()
+testReduce()
 
 function testReduce2(){
     // 반복되는 모든 것에는 reduce 함수를 적용할 수 있다.

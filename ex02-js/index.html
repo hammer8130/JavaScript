@@ -19,16 +19,23 @@
     // window.open("https://www.naver.com/")
     // window.open("https://www.naver.com/", "newWin") // URL, 창이름
     newWin = window.open("https://www.naver.com/", "newWin","width=800, height=600, left=100, top=100") // URL, 창이름,창속성    
+    newWin.focus()
 }
 
 function closeWindow(){
     if(newWin !==undefined && newWin.close) // undefined가 아니고 닫혀있지 않으면
     newWin.close()
 }
+
+function printInner(){
+    let message = `현재 윈도우 창의 크기는 ${window.innerWidth} x ${window.innerHeight}`
+    alert(message)
+}
+
     </script>
 </head>
 
-<body>
+<body>8130
     <h1>Welcome</h1>
 
     <h3>window 객체</h3>
@@ -37,7 +44,7 @@ function closeWindow(){
         
         <li><a href="javascript:closeWindow()">창 닫기</a></li>
 
-        <li>지금 브라우저의 크기는?</li>
+        <li><a href="javascript:printInner()"> 브라우저의 크기는?</a></li>
     </ul>
     <!-- <script>
         document.write(`안녕하세요, ${name}님`)
