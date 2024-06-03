@@ -40,7 +40,7 @@ function addItem() {
         let itemNode = document.createElement("li")
         itemNode.innerHTML = item // 컨텐츠 추가 innerHTML / innerText
         let toolBar = document.createElement("div") // block요소는 전체 차지. 개행 이루어진다.
-        toolBar.style.display = "inline"
+        toolBar.style.display = "inline-box"
         toolBar.style.cssFloat = "right"
         let btnDel = document.createElement("button")
         btnDel.innerText = "삭제"
@@ -60,6 +60,8 @@ function addItem() {
             console.log(event.target.parentNode.parentNode)  // 삭제 대상
             let removeItem = event.target.parentNode.parentNode
             container.removeChild(removeItem)
+
+            
         })
     }
 

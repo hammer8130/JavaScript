@@ -64,6 +64,8 @@ window.addEventListener("load", (event) => {
         })
     }
 
+    
+
     document.getElementById("keyword")
     // .addEventListener("keydown" ,event =>{
     .addEventListener("keypress" ,event =>{
