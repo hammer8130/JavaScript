@@ -85,9 +85,47 @@
             document.getElementById("localStorageResult").innerText = "세팅이 삭제되었습니다."
         })
 
+        //          -----------------------------------------------------------------------------------
 
         // SessionStorage Handlers - User Information
+        // Save User info
+        document.getElementById("saveSessionStorage").addEventListener("click", function () {
 
+            const userName = document.getElementById("username").value
+            const eMail = document.getElementById("email").value
+
+            if (userName && eMail) {
+                sessionStorage.setItem("username", userName)
+                sessionStorage.setItem("email", eMail)
+
+                document.getElementById("sessionStorageResult").innerText = "저장되었습니다."
+            } else {
+                alert("이름과 이메일은 필수입니다.")
+            }
+
+        })
+
+        // Read User Info
+        document.getElementById("readSessionStorage").addEventListener("click", function () {
+
+            const userName = sessionStorage.getItem("username")
+            const eMail = sessionStorage.getItem("email")
+
+            if (userName && eMail) {
+                document.getElementById("sessionStorageResult").innerText = `Username: ${userName}, Email: ${eMail}`
+            } else {
+                document.getElementById("sessionStorageResult").innerText = "올바른 설정이 아닙니다."
+            }
+        })
+
+        // Delete User Info
+        document.getElementById("deleteSessionStorage").addEventListener("click", function () {
+
+            sessionStorage.removeItem("username")
+            sessionStorage.removeItem("email")
+
+            document.getElementById("sessionStorageResult").innerText = "삭제되었습니다."
+        })
 
     </script>
 </body>
