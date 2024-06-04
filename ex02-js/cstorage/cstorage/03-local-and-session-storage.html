@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SessionStorage and LocalStorage Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input,
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>SessionStorage, LocalStorage Example</h1>
+
+    <h2>LocalStorage - User Settings</h2>
+    <label for="theme">Theme:</label>
+    <input type="text" id="theme" placeholder="e.g., dark">
+    <label for="fontSize">Font Size:</label>
+    <input type="text" id="fontSize" placeholder="e.g., medium">
+    <br />
+    <button id="saveLocalStorage">Save Settings</button>
+    <button id="readLocalStorage">Read Settings</button>
+    <button id="deleteLocalStorage">Delete Settings</button>
+    <div id="localStorageResult"></div>
+
+    <h2>SessionStorage - User Information</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="e.g., Alice">
+    <label for="email">Email:</label>
+    <input type="text" id="email" placeholder="e.g., alice@example.com">
+    <br />
+    <button id="saveSessionStorage">Save User Info</button>
+    <button id="readSessionStorage">Read User Info</button>
+    <button id="deleteSessionStorage">Delete User Info</button>
+    <div id="sessionStorageResult"></div>
+
+    <script>
+        // LocalStorage Handlers - User Settings
+        // Save Setting
+        document.getElementById("saveLocalStorage").addEventListener("click", function (event) {
+            const theme = document.getElementById("theme").value
+            const fontSize = document.getElementById("fontSize").value
+
+            if (theme && fontSize) {
+                // localStorage에 입력 
+                // key와 실제 value
+                localStorage.setItem("theme", theme)
+                localStorage.setItem("fontSize", fontSize)
+
+                document.getElementById("localStorageResult").innerText = `Theme:${theme}, Font Size: ${fontSize}`
+            } else {
+                alert("테마와 폰트 사이즈를 입력하세요.")
+            }
+        })
+        // Read Setting
+        document.getElementById("readLocalStorage").addEventListener("click", function (event) {
+            // localStorage부터 theme와 fontsize 읽어와서
+            // #localStorageResult div에 출력
+
+            // 해당 value에 상응하는 key값 하나만 입력.
+            const theme = localStorage.getItem("theme")
+            const fontSize = localStorage.getItem("fontSize")
+
+            if (theme && fontSize) {
+                document.getElementById("localStorageResult").innerText = `Theme: ${theme}, Font Size : ${fontSize}`
+            } else {
+                document.getElementById("localStorageResult").innerText = "설정을 찾을 수 없습니다."
+            }
+        })
+        // Delete Setting
+        document.getElementById("deleteLocalStorage").addEventListener("click", function (event) {
+
+            localStorage.removeItem("theme")
+            localStorage.removeItem("fontSize")
+
+            document.getElementById("localStorageResult").innerText = "세팅이 삭제되었습니다."
+        })
+
+
+        // SessionStorage Handlers - User Information
+
+
+    </script>
+</body>
+
+</html>
